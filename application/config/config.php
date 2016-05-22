@@ -17,7 +17,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'http://justinchallenger.ca/home/';
+switch (ENVIRONMENT) {
+    case 'production':
+        $config['base_url'] = 'http://justinchallenger.ca/home/';
+        break;
+    default:
+        // Auto find base_url
+        break;
+}
+
 
 /*
 |--------------------------------------------------------------------------
